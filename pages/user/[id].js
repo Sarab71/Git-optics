@@ -231,8 +231,9 @@ const User = ({ user }) => {
       </form>
       <hr />
       <h1 className="font-bold text-center text-2xl">Orders</h1>
-      
-      <div className="sm:hidden my-4 relative overflow-x-auto shadow-md sm:rounded-lg">
+      {orders.map((order) => (
+        <div>
+        <div className="sm:hidden my-4 relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="min-w-full text-center">
           <thead className=" border-b-2 text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -251,33 +252,33 @@ const User = ({ user }) => {
             <tr className="bg-white border-b">
               <td className="font-bold px-2 py-4 text-xs uppercase bg-gray-50 dark:bg-gray-700 text-white">sph</td>
               <td className="text-sm font-bold text-gray-900 px-2 py-4 whitespace-nowrap">
-                {user.rsph}
+                {order.rsph}
               </td>
               <td className="text-sm font-bold text-gray-900 px-2 py-4 whitespace-nowrap">
-                {user.lsph}
+                {order.lsph}
               </td>
             </tr >
             <tr className="bg-white border-b">
               <td className="font-bold px-2 py-4 text-xs uppercase bg-gray-50 dark:bg-gray-700 text-white">cyl</td>
               <td className="text-sm font-bold text-gray-900 px-2 py-4 whitespace-nowrap">
-                {user.rcyl}
+                {order.rcyl}
               </td>
               <td className="text-sm font-bold text-gray-900 px-2 py-4 whitespace-nowrap">
-                {user.lcyl}
+                {order.lcyl}
               </td>
             </tr >
             <tr className="bg-white border-b">
               <td className="font-bold px-2 py-4 text-xs uppercase bg-gray-50 dark:bg-gray-700 text-white">axis</td>
               <td className="text-sm font-bold text-gray-900 px-2 py-4 whitespace-nowrap">
-                {user.raxis}
+                {order.raxis}
               </td>
               <td className="text-sm font-bold text-gray-900 px-2 py-4 whitespace-nowrap">
-                {user.laxis}
+                {order.laxis}
               </td>
             </tr>
             <tr className="bg-white font-bold border-b">
               <td>ADD:</td>
-              <td>{user.add}</td>
+              <td>{order.add}</td>
             </tr>
           </tbody>
         </table>
@@ -321,22 +322,22 @@ const User = ({ user }) => {
           <tbody>
             <tr className=" text-black font-bold text-center">
               <td>
-                {user.rsph}
+                {order.rsph}
               </td>
               <td className="px-6 py-4">
-                {user.rcyl}
+                {order.rcyl}
               </td>
               <td className="px-6 py-4">
-                {user.raxis}
+                {order.raxis}
               </td>
               <td className="px-6 py-4">
-                {user.lsph}
+                {order.lsph}
               </td>
               <td className="px-6 py-4">
-                {user.lcyl}
+                {order.lcyl}
               </td>
               <td className="px-6 py-4">
-                {user.laxis}
+                {order.laxis}
               </td>
             </tr>
             <tr>
@@ -365,13 +366,13 @@ const User = ({ user }) => {
             <tr className="bg-white border-b">
               <td className="font-bold px-2 py-4 uppercase bg-gray-50 dark:bg-gray-700 text-white">frame</td>
               <td>
-                {user.frame}
+                {order.frame}
               </td>
             </tr >
             <tr className="bg-white border-b">
               <td className="font-bold px-2 py-4 uppercase bg-gray-50 dark:bg-gray-700 text-white">lens</td>
               <td>
-                {user.lens}
+                {order.lens}
               </td>
             </tr >
 
@@ -379,6 +380,9 @@ const User = ({ user }) => {
         </table>
 
       </div>
+      </div>
+      ))}
+      
     </div>
   )
 }
