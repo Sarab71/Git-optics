@@ -12,7 +12,7 @@ export default async (req, res) => {
 }
 const handler = async (req, res) => {
   if (req.method == 'POST') {
-    console.log(User)
+    console.log(req.body)
     const user = await User.findByIdAndUpdate({ _id: req.query.userId })
     const { rsph, rcyl, raxis, lsph, lcyl, laxis, add, frame, lens } = req.body
     const order = { rsph, rcyl, raxis, lsph, lcyl, laxis, add, frame, lens };
