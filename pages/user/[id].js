@@ -231,7 +231,7 @@ const User = ({ user }) => {
       </form>
       <hr />
       <h1 className="font-bold text-center text-2xl">Orders</h1>
-      {orders.map((order) => (
+      {/* {orders.map((order) => (
         <div>
         <div className="sm:hidden my-4 relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="min-w-full text-center">
@@ -381,7 +381,7 @@ const User = ({ user }) => {
 
       </div>
       </div>
-      ))}
+      ))} */}
       
     </div>
   )
