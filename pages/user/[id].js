@@ -18,7 +18,7 @@ const User = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = { rsph, rcyl, raxis, lsph, lcyl, laxis, add, frame, lens }
-    let res = await fetch(`${baseUrl}/api/orders?userId = ${router.query.id}`, {
+    let res = await fetch(`${baseUrl}/api/orders?userId=${router.query.id}`, {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
