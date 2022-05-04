@@ -15,10 +15,10 @@ const User = ({ user }) => {
   const [add, setAdd] = useState("")
   const [frame, setFrame] = useState("")
   const [lens, setLens] = useState("")
-  const effect = useEffect()
-    effect = () =>{
+  let effect = useEffect()
+    effect = (() =>{
      console.log(user)
-    } 
+    }) 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = { rsph, rcyl, raxis, lsph, lcyl, laxis, add, frame, lens }
