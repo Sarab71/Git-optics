@@ -15,8 +15,7 @@ const User = ({ user }) => {
   const [add, setAdd] = useState("")
   const [frame, setFrame] = useState("")
   const [lens, setLens] = useState("")
-  let effect = useEffect()
-    effect = (() =>{
+  useEffect(() =>{
      console.log(user)
     }) 
   const handleSubmit = async (e) => {
