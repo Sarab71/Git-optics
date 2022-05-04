@@ -3,6 +3,7 @@ import { useState } from "react"
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 const User = ({ user }) => {
   const router = useRouter()
   const [rsph, setRsph] = useState("")
@@ -14,7 +15,10 @@ const User = ({ user }) => {
   const [add, setAdd] = useState("")
   const [frame, setFrame] = useState("")
   const [lens, setLens] = useState("")
-
+  const effect = useEffect()
+    effect = () =>{
+     console.log(user)
+    } 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = { rsph, rcyl, raxis, lsph, lcyl, laxis, add, frame, lens }
@@ -27,7 +31,7 @@ const User = ({ user }) => {
     })
     let response = await res.json()
     console.log(response)
-    console.log(user)
+
     setRsph('')
     setRcyl('')
     setRaxis('')
