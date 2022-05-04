@@ -1,5 +1,5 @@
-import initDB from '../../../helper/initDB';
-import User from '../../../models/addUser';
+import initDB from '../../helper/initDB';
+import User from '../../models/addUser';
 
 initDB()
 
@@ -14,7 +14,7 @@ const handler = async (req, res) => {
   if (req.method == 'POST') {
     console.log(req.body)
     const { uid } = req.query
-    const user = await User.findByIdAndUpdate({ _id: uid })
+    const user = await User.findByIdAndUpdate({ _id: '62716cc5cd028105a46b1a48' })
     const { rsph, rcyl, raxis, lsph, lcyl, laxis, add, frame, lens } = req.body
     const order = { rsph, rcyl, raxis, lsph, lcyl, laxis, add, frame, lens };
     user.orders.push(order);

@@ -1,4 +1,3 @@
-import baseUrl from '../helper/baseUrl'
 import Link from 'next/link'
 import User from '../models/addUser'
 import mongoose from 'mongoose'

@@ -16,7 +16,7 @@ const User = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = { rsph, rcyl, raxis, lsph, lcyl, laxis, add, frame, lens }
-    let res = await fetch(`${baseUrl}/api/user/orders`, {
+    let res = await fetch(`${baseUrl}/api/orders`, {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
@@ -228,7 +228,9 @@ const User = ({ user }) => {
         </div>
       </form>
       <hr />
-      {/* <div className="sm:hidden my-4 relative overflow-x-auto shadow-md sm:rounded-lg">
+      <h1 className="font-bold text-center text-2xl">Orders</h1>
+      
+      <div className="sm:hidden my-4 relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="min-w-full text-center">
           <thead className=" border-b-2 text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -374,7 +376,7 @@ const User = ({ user }) => {
           </tbody>
         </table>
 
-      </div> */}
+      </div>
     </div>
   )
 }
