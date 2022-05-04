@@ -2,7 +2,9 @@ import baseUrl from "../../helper/baseUrl"
 import { useState } from "react"
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from "next/router";
 const User = ({ user }) => {
+  const router = useRouter()
   const [rsph, setRsph] = useState("")
   const [rcyl, setRcyl] = useState("")
   const [raxis, setRaxis] = useState("")
@@ -16,7 +18,7 @@ const User = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = { rsph, rcyl, raxis, lsph, lcyl, laxis, add, frame, lens }
-    let res = await fetch(`${baseUrl}/api/orders`, {
+    let res = await fetch(`${baseUrl}/api/orders?userId = ${router.query.id}`, {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
